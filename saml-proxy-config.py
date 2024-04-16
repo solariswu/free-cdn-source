@@ -1,9 +1,9 @@
 import yaml
 import json
 import os
-import shutil
-import json
-import requests
+# import requests
+# import shutil
+import time
 
 
 
@@ -59,12 +59,14 @@ def add_sp_meta_url (event):
   with open(BASE_DIR+'/'+FRONTEND_YAML_FILENAME, 'r') as f:
     frontend_yaml = yaml.safe_load(f)
     f.close()
-    
-  frontend_yaml['config']['idp_config']['metadata']['remote'].append({'url': event['metadataUrl'], 'cert': None})
   
-  with open(BASE_DIR+'/'+FRONTEND_YAML_FILENAME, 'w') as f:
-    yaml.dump(frontend_yaml, f)
-    f.close()
+  new_item = {'url': event['metadataUrl'], 'cert': None}
+  if new_item not in frontend_yaml['config']['idp_config']['metadata']['remote']:
+    frontend_yaml['config']['idp_config']['metadata']['remote'].append(new_item)
+  
+    with open(BASE_DIR+'/'+FRONTEND_YAML_FILENAME, 'w') as f:
+      yaml.dump(frontend_yaml, f)
+      f.close()
     
 def add_tenant_routing (event):
   
@@ -141,20 +143,21 @@ def list_tenants ():
 
 def create_tenant (event):
   add_sp_meta_url(event)
+  time.sleep(1)
   # create_backend_yaml(event)
-  add_tenant_routing(event)
   # download_sp_meta_file(payload)
   save_tenant_index(event)
+  add_tenant_routing(event)
+  
   event['id'] = event['entityId']
   return event
 
 def remove_tenant (entityId, clientId):
   url = remove_tenant_index(entityId, clientId)
-  remove_tenant_routing(entityId)
-  # remove_backend_yaml(event)
   remove_sp_meta_url(url)
-  event['id'] = entityId
-  return event
+  time.sleep(1)
+  # remove_backend_yaml(event)
+  remove_tenant_routing(entityId)
   
 def get_tenant (id):
   with open(BASE_DIR+'/'+TENANTS_YAML_FILENAME, 'r') as f:
@@ -237,10 +240,12 @@ def lambda_handler(event, context):
     result = create_tenant(payload)
   elif method == 'DELETE' and event.get('pathParameters') is not None:
     payload = json.loads(event['body'])
-    result = remove_tenant(event['pathParameters']['id'], payload['clientId'])
-  elif method == 'PUT':
-    update_tenant_routing(event)
-    result = update_backend_yaml(event)
+    remove_tenant(payload['entityId'], payload['clientId'])
+    result = event;
+    result['id'] = event['pathParameters']['id']
+  # elif method == 'PUT':
+  #   update_tenant_routing(event)
+  #   result = update_backend_yaml(event)
   elif method == 'GET':
     if event.get('pathParameters') is not None:
       result = get_tenant(event['pathParameters']['id'])
