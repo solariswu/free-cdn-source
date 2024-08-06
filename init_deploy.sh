@@ -25,4 +25,3 @@ echo `clone the repo $$PRJ_REPO_BASE$PRJ_REPO_NAME`
 git clone $PRJ_REPO_BASE$PRJ_REPO_NAME
 cd $PRJ_REPO_NAME
 git pull 
-chmod +x ./deployment.sh && ./deployment.sh
