@@ -24,4 +24,5 @@ npm install -g npm@$NPM_VER
 echo `clone the repo $$PRJ_REPO_BASE$PRJ_REPO_NAME`
 git clone $PRJ_REPO_BASE$PRJ_REPO_NAME
 cd $PRJ_REPO_NAME
-git pull && ./deployment.sh
+git pull 
+chmod +x ./deployment.sh && ./deployment.sh
