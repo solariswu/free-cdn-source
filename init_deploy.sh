@@ -21,7 +21,7 @@ sudo yum install git -y
 npm install -g npm@$NPM_VER
 
 #download code repo
-echo `clone the repo $$PRJ_REPO_BASE$PRJ_REPO_NAME`
+echo "clone the repo $PRJ_REPO_BASE$PRJ_REPO_NAME"
 git clone $PRJ_REPO_BASE$PRJ_REPO_NAME
 cd $PRJ_REPO_NAME
 git pull 
