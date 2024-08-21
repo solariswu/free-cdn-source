@@ -23,7 +23,7 @@ npm install -g npm@$NPM_VER
 
 #download code repo
 echo "clone the repo $REPO_BASE$APERSONAIDP_REPO_NAME"
-git clone $REPO_BASE$APERSONAIDP_REPONAME
+git clone $REPO_BASE$APERSONAIDP_REPO_NAME
 echo "clone the repo $REPO_BASE$APERSONAADM_REPO_NAME"
 git clone $REPO_BASE$APERSONAADM_REPO_NAME
 cd $APERSONAIDP_REPO_NAME
