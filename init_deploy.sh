@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #project code repo
-PRJ_REPO_BASE=https://github.com/solariswu/
-PRJ_REPO_NAME=customsso
+export APERSONAIDP_REPO=https://github.com/solariswu/customsso
+export APERSONAADM_REPO=https://github.com/solariswu/cognito-userpool-myraadmin
 
 #install NODE NPM GIT
 NVM_VER=v0.39.7
@@ -21,7 +21,12 @@ sudo yum install git -y
 npm install -g npm@$NPM_VER
 
 #download code repo
-echo "clone the repo $PRJ_REPO_BASE$PRJ_REPO_NAME"
-git clone $PRJ_REPO_BASE$PRJ_REPO_NAME
-cd $PRJ_REPO_NAME
+echo "clone the repo $APERSONAIDP_REPO"
+git clone $APERSONAIDP_REPO
+echo "clone the repo $APERSONADM_REPO"
+git clone $APERSONAADM_REPO
+cd $APERSONAIDP_REPO
 git pull 
+cd ..
+cd $APERSONAADM_REPO
+git pull
