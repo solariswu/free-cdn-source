@@ -28,6 +28,8 @@ echo "clone the repo $REPO_BASE$APERSONAADM_REPO_NAME"
 git clone $REPO_BASE$APERSONAADM_REPO_NAME
 cd $APERSONAIDP_REPO_NAME
 git pull 
+cp ./config.sh ../
+cp ./install.sh ../
 cd ..
 cd $APERSONAADM_REPO_NAME
 git pull
