@@ -20,6 +20,7 @@ sudo yum install git -y
 
 #update npm
 npm install -g npm@$NPM_VER
+npm install -g aws-cdk 
 
 #download code repo
 echo "clone the repo $REPO_BASE$APERSONAIDP_REPO_NAME"
