@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<md:EntityDescriptor
+	xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" validUntil="2024-10-23T10:52:20.367Z" cacheDuration="PT10080M" entityID="urn:amazon:cognito:sp:us-east-1_WznKvalSA">
+	<md:SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+		<md:KeyDescriptor use="signing">
+			<ds:KeyInfo
+				xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+				<ds:X509Data>
+					<ds:X509Certificate>MIICvTCCAaWgAwIBAgIJAOKD9IbgbaPjMA0GCSqGSIb3DQEBCwUAMB4xHDAaBgNVBAMME3VzLWVhc3QtMV9Xem5LdmFsU0EwHhcNMjQwMjIxMDIxOTUzWhcNMzQwMjIwMTIzMTUzWjAeMRwwGgYDVQQDDBN1cy1lYXN0LTFfV3puS3ZhbFNBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvMTEqsut2qajB515J2OOrOXAcoStcyWQj3btKQ4PwpN38807CNHhvFflROTduTpgzAL9c7ysvwh6hjKzoWcX/BkHpiFBISJAQrUKKAcD55tpJkha4jIR1N04i9zCNJyObkiSGVA3dir8VDhUfvPrgHLz5264OtGyb2B/4V4TOCUWfP9HuPaSsNqxyDE3asYXIuqKi6zeugGjLlrcLwGb3tFP2dKat0Fa2Yg33QAHothQbWTsE+S5zSKPGoJxUagyskK51pNg1OnMl/a0zLMovQoFou6PgzB024zhqf84aU+/2sjzQJnJFqvvh0rJYiQnyd17+/9ttlf+svqP9//AIwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBRf6g93YHp7AiJHe/0eIyqUlw9JbAcCXTFQhOiYX7bg3VHbMgFO8TUfZ+IkXQFWQhThYUUmGDT3vU4Ntg2VIPY9cxGXFd7pQmBY/VOQM2TmTvwZ8zUfFI2DRQiSEABOdDFbmb6gelnN7XuNFvdk7iIAZt/EwunXMiZ9U8kB7Rm6bWdzuDvKYOkdWpArJDpSY2I8fqmqWavIa8f65tsqaCtquE/X5gL0P89ZSy+H+3Kyne/+L+09N8FcVpAI965LrHyd+t56Gq7PvkkbHqGG2blf7qEdzbw4L8xBD/vQ7cAPWjjJhB71CyERAEBPu7GUl54qo2b5MXnHoFx5o+Qh2CT</ds:X509Certificate>
+				</ds:X509Data>
+			</ds:KeyInfo>
+		</md:KeyDescriptor>
+		<md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat>
+		<md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://coglabtest.auth.us-east-1.amazoncognito.com/saml2/idpresponse" index="1"/>
+	</md:SPSSODescriptor>
+</md:EntityDescriptor>
