@@ -7,7 +7,7 @@ export APERSONAADM_REPO_NAME=cognito-userpool-myraadmin
 
 #install NODE NPM GIT
 NVM_VER=v0.39.7
-NPM_VER=10.8.3
+NPM_VER=10.9.0
 
 rm -rf .nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VER/install.sh | bash
