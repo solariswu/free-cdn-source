@@ -31,6 +31,7 @@ cd $APERSONAIDP_REPO_NAME
 git pull 
 cp ./config.sh ../
 cp ./install.sh ../
+cp ./uninstall.sh ../
 cd ..
 cd $APERSONAADM_REPO_NAME
 git pull
