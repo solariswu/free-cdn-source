@@ -32,6 +32,7 @@ git pull
 cp ./config.sh ../
 cp ./install.sh ../
 cp ./uninstall.sh ../
+cp ./aPersona_ASM-and-aPersona_Identity_Mgr_Ts_Cs.11-27-2024.txt ../
 cd ..
 cd $APERSONAADM_REPO_NAME
 git pull
