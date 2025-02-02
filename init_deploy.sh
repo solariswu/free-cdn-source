@@ -12,15 +12,18 @@ NPM_VER=11.0.0
 rm -rf .nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VER/install.sh | bash
 source ~/.bashrc
-nvm install --lts
-
-#install git
-sudo yum update -y
-sudo yum install git -y
-
-#update npm
-npm install -g npm@$NPM_VER
-npm install -g aws-cdk 
+echo "install nvm "$NVM_VER
+nvm install --lts >/dev/null
+ 
+ #install git
+echo "install git"
+sudo yum update -y >/dev/null
+sudo yum install git -y >/dev/null
+ 
+ #update npm
+echo "install npm v"$NPM_VER
+npm install -g npm@$NPM_VER >/dev/null
+npm install -g aws-cdk >/dev/null
 
 #download code repo
 echo "clone the repo $REPO_BASE$APERSONAIDP_REPO_NAME"
