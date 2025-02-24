@@ -33,10 +33,8 @@ git clone $REPO_BASE$APERSONAADM_REPO_NAME
 cd $APERSONAIDP_REPO_NAME
 git pull 
 cp ./config.sh ../
-cp ./install.sh ../
 cp ./uninstall.sh ../
-cp ./update_latest.sh ../
-cp ./aPersona_ASM-and-aPersona_Identity_Mgr_Ts_Cs.txt ../
+cp ./update_latest.sh ../update.sh
 cd ..
 cd $APERSONAADM_REPO_NAME
 git pull
