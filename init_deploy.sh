@@ -2,8 +2,8 @@
 
 #project code repo
 REPO_BASE=https://github.com/solariswu/
-export APERSONAIDP_REPO_NAME=customsso
-export APERSONAADM_REPO_NAME=cognito-userpool-myraadmin
+export APERSONAIDP_REPO_NAME=amfa-service-multi-tenants
+export APERSONAADM_REPO_NAME=amfa-admin-portal-multi-tenants
 
 #install NODE NPM GIT
 NVM_VER=v0.39.7
