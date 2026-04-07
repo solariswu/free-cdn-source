@@ -2,7 +2,7 @@
 
 #project code repo
 REPO_BASE=https://github.com/kcsapersona/
-export APERSONAIDP_REPO_NAME=aPersona-Identity_Multi-Tenant_Source
+export APERSONAIDP_REPO_NAME=aPersona-Identity_Multi-Tenant_Install
 
 #install NODE NPM GIT
 NVM_VER=v0.39.7
